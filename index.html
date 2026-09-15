@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#050510">
+<meta name="color-scheme" content="dark">
+<title>Bush — Earn BP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* إخفاء أسرع لشاشة التحميل */
+  .loading-screen { transition: opacity 0.2s ease-out; }
+  /* تحسين استجابة الأزرار */
+  .btn, .nav-item, .nav-orb, .ad-watch-btn, .ad-bonus, .choice, .uc-option {
+    transition: transform 0.08s ease, background 0.1s, border-color 0.1s;
+    will-change: transform;
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="ambient ambient-a"></div>
+<div class="ambient ambient-b"></div>
+
+<div id="app">
+  <header class="app-header">
+    <div class="profile">
+      <div class="avatar-wrap">
+        <img id="avatar" alt="">
+        <div id="avatarFallback" class="avatar-fallback">B</div>
+      </div>
+      <div class="profile-copy">
+        <div class="profile-name" id="profileName">Bush User</div>
+        <div class="profile-id"><span class="online-dot"></span>ID <span id="profileId">—</span></div>
+      </div>
+    </div>
+    <div class="header-balance">
+      <div class="balance-label">BP BALANCE</div>
+      <div id="balanceBp" class="balance-bp">0 BP</div>
+      <div id="balanceUsd" class="balance-usd">$0.000</div>
+    </div>
+  </header>
+
+  <div id="adminBar" class="admin-bar hidden">
+    <button id="adminOpen" class="admin-trigger">
+      <span class="admin-mark">◆</span>
+      <span>لوحة التحكم</span>
+      <span>›</span>
+    </button>
+  </div>
+
+  <main id="main" class="main">
+    <section id="page-home" class="page active"></section>
+    <section id="page-tasks" class="page"></section>
+    <section id="page-referrals" class="page"></section>
+    <section id="page-withdraw" class="page"></section>
+    <section id="page-competition" class="page"></section>
+    <section id="page-admin" class="page"></section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item" data-page="competition">
+      <span class="nav-icon icon" data-icon="trophy"></span>
+      <span data-i18n="competition">المسابقة</span>
+    </button>
+    <button class="nav-item" data-page="tasks">
+      <span class="nav-icon icon" data-icon="tasks"></span>
+      <span data-i18n="tasks">المهام</span>
+    </button>
+    <button class="nav-orb" id="bpOrbBtn" aria-label="Home">
+      <span>BP</span>
+    </button>
+    <button class="nav-item" data-page="referrals">
+      <span class="nav-icon icon" data-icon="users"></span>
+      <span data-i18n="referrals">دعوة</span>
+    </button>
+    <button class="nav-item" data-page="withdraw">
+      <span class="nav-icon icon" data-icon="wallet"></span>
+      <span data-i18n="withdraw">السحب</span>
+    </button>
+  </nav>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<div id="loading" class="loading-screen">
+  <div class="loading-bg"></div>
+  <div class="loading-bar-wrap">
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+
+<!-- Telegram Web App SDK (يجب أن يُحمّل أولاً) -->
+<script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+
+<!-- RichAds SDK -->
+<script src="https://richinfo.co/richpartners/telegram/js/tg-ob.js" defer></script>
+
+<!-- ✅ OnClickA SDK (الجديد — الرابط الصحيح من الدعم) -->
+<script async src="https://js.onclckmn.com/static/onclicka.js" data-admpid="6146212"></script>
+
+<!-- AdsGram SDK -->
+<script src="https://sad.adsgram.ai/js/sad.min.js" defer></script>
+
+<!-- App Logic -->
+<script src="app.js" defer></script>
+</body>
+</html>
